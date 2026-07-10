@@ -1,0 +1,126 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+
+.line-Hor-1 {
+ position: absolute;
+ top: 22%;
+ left: 0;
+ width: 100%;
+ height: 2px;
+ background-color: #fff;
+}
+
+.line-Hor-2 {
+ position: absolute;
+ top: 23%;
+ left: 0;
+ width: 100%;
+ height: 2px;
+ background-color: #fff;
+}
+
+.line-Vert-1 {
+ position: absolute;
+ top: 0;
+ left: 16%;
+ width: 2px;
+ height: 100%;
+ background-color: #fff;
+}
+
+.line-Vert-2 {
+ position: absolute;
+ top: 0;
+ left: 17%;
+ width: 2px;
+ height: 100%;
+ background-color: #fff;
+}
+
+.karte-Container {
+width: 100%;
+}
+
+.karte-oben {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ align-content: center;
+ height: 400px;
+ width: 1076px;
+ background: linear-gradient(135deg, #6dd5fa 0%, #2980b9 100%);
+ border-radius: 8px;
+}
+
+.Profile-Image {
+ margin-left: auto;
+ margin-right: 20px;
+ padding: 5px;
+ display: flex;
+ align-self: center;
+ border-radius: 50%;
+ border: 3px solid #fff;
+ width: 280px;
+ height: 280px;
+ background-size: cover;
+ background-position: center;
+}
+
+.karte-text {
+ flex: 1;
+ padding: 20px;
+ margin-left: 50px;
+ color: #fff;
+ text-align: center;
+}
+
+.karte-text h1 {
+ font-size: 2.5rem;
+ background: linear-gradient(135deg, #939292 0%, #08324d 100%);
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ margin-bottom: 20px;
+}
+
+.karte-text h2 {
+ font-size: 1.5rem;
+ color: #fff;
+ margin-bottom: 20px;
+}
+
+.karte-text p {
+ font-size: 1rem;
+ color: #fff;
+ line-height: 1.5;
+}
+
+.karte-unten {
+display: flex;
+justify-self: center;
+gap: 50px;
+width: 800px;
+margin-top: -45px;
+}
+
+.Contact-Box {
+ flex: 1;
+ background-color: #ffffff;
+ text-align: center;
+ border-radius: 12px;
+ padding: 20px 16px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
