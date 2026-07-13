@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamday Events - Ihre Eventplanner</title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+            <img id="logo" src="Images/Dreamday-Logo-1.png" alt="Dreamday Events Logo">
+        <nav>
+            <ul>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#anfahrt">Anfahrt</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Bereich -->
+        <div class="hero">
+            <img src="Images/hero-img.jpg" alt="Hero Image">
+            <div class="hero-Overlay">
+            <h1>Ihre Träume, Perfekt geplant</h1>
+            <p>Wir machen jeden Moment unvergesslich</p>
+            </div>
+        </div>
+
+        <main>
+            <div class="Über-Uns"> 
+                <h2>Über uns</h2>
+                <table>
+                    <tr>
+               <td><p>Seit Über 15 Jahren gestalten wir die schönsten Momente im Leben unserer Kunden. Von intimen Hochzeiten bis hin zu großen Firmenfeiern - wir sorgen für unvergessliche Erinnerungen.</p></td>
+            <td><img src="Images/Uber-Uns.jpg" alt="Über uns Bild"></td>
+                    </tr>
+            </table>
+            </div>
+
+<!-- Leistungen Bereich -->
+            <div class="Leistungen">
+                <h2>Unsere Leistungen</h2>
+                <table>
+                    <tr>
+                <td><h3>Hochzeitsplanung</h3>
+                <p>Von der ersten Idee bis zum letzten Tanz - wir begleiten Sie durch jeden Moment Ihrer Traumhochzeit individuell, persönlich und bis ins kleinste Detail durchdacht.</p>
+                </td>
+                <td><img src="Images/Leistungen-Hochzeitsplanung.jpg" alt="Hochzeitsplanung"></td>
+                    </tr>
+                    <tr>
+                <td><img src="Images/Leistungen-Firmenveranstaltungen.jpg" alt="Firmenveranstaltungen"></td>
+                <td><h3>Firmenveranstaltungen</h3>
+                <p>Professionelle Planung von Firmenjubiläen, Weihnachtsfeiern oder Teambuilding-Events. Wir schaffen den perfekten Rahmen für Ihr Unternehmen.</p>
+                </td>        
+            </tr>
+                    <tr>
+                        <td><h3>Private Feiern</h3>
+                        <p>Ob Geburtstagsfeiern, Jubiläen oder Familienfeier - wir verwenden Ihre Vision in Realität und kümmern uns um jedes Detail.</p>
+                        </td>
+                        <td><img src="Images/Leistungen-Private-Feiern.jpg" alt="Private Feiern"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="Anfahrt">
+                <h2>Hier finden Sie uns</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.6156433535375!2d7.651244000000001!3d51.904478000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b9a4f4668b2299%3A0x470cf3eb346eefe3!2sAction%20M%C3%BCnster-Hiltrup!5e0!3m2!1sde!2sde!4v1783960365085!5m2!1sde!2sde" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            
+            <!-- Kontakt Bereich -->
+            <div class="Kontakt">
+                <h2>Kontaktieren Sie uns</h2>
+                    <table>
+                        <tr>
+                    <td><h4>Lassen Sie uns Ihre Träume verwirklichen</h4>
+                    <p>Wir freuen uns darauf, Ihre Vision kennenzulernen.</p>
+                    <p>Musterstraße 1,<br> 12345 Musterstadt</p>
+                    <p>Telefon: 01234 567890</p></td>
+                    <td>
+                <form action="mailto:info@dreamday-events.de" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Ihre@email.de" required>
+
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+
+                    <input type="submit" value="Absenden">
+                </form>
+                    </td></tr>
+                </table>
+            </div>
+        </main>
+        <footer>
+            <h3>Dreamday Events</h3>
+                <i class="fa-brands fa-facebook-f"></i>
+        </footer>
+</body>
+</html>
