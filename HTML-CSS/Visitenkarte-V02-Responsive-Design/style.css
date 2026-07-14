@@ -1,0 +1,185 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        /* ===== HAUPT-CONTAINER (2 Spalten nebeneinander) ===== */
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* ===== LINKE SEITE (Blau) ===== */
+        .links {
+            background-color: #6A74DB;
+            color: white;
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .links h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .links .beruf {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #e0dfff;
+        }
+
+        .links p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #e8e8ff;
+            margin-bottom: 28px;
+            max-width: 90%;
+        }
+
+        /* Tags (HTML, CSS, ...) */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 7px 14px;
+            font-size: 12px;
+            color: white;
+            background-color: #ffffff58; /* leicht transparentes Weiß */
+        }
+
+        /* ===== RECHTE SEITE (weiß) ===== */
+        .rechts {
+            background-color: #ffffff;
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Profilbild */
+        .profil-bild {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #c5d8f0;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background-color: #dce8f5;
+        }
+
+        .rechts h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #222222;
+            margin-bottom: 6px;
+        }
+
+        .rechts .beruf {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 16px;
+        }
+
+        .rechts p {
+            font-size: 12px;
+            color: #888888;
+            line-height: 1.6;
+            max-width: 280px;
+            margin-bottom: 28px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: #1B7EDA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #1B7EDA;
+            border: 2px solid #1B7EDA;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== MEDIA QUERIES ===== */
+
+        /* Tablet: ab 601px bis 900px */
+        @media (max-width: 900px) {
+            .links h1 {
+                font-size: 32px;
+            }
+
+            .links {
+                padding: 40px 30px;
+            }
+
+            .rechts {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Smartphone: bis 600px - untereinander statt nebeneinander */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .links {
+                padding: 40px 24px;
+            }
+
+            .links h1 {
+                font-size: 28px;
+            }
+
+            .rechts {
+                padding: 40px 24px;
+            }
+
+            .profil-bild {
+                width: 100px;
+                height: 100px;
+            }
+        }
