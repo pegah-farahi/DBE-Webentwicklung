@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #faf6fd;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-size: 14px;
+  font-weight: 600;
+}
+header nav ul {
+  padding-top: 50px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #2c2533;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: #a67acc;
+}
+#logo {
+  height: 125px;
+}
+.hero {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-Overlay {
+  position: absolute;
+  background-color: rgba(15, 15, 15, 0.5);
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+.hero-Overlay h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.hero-Overlay p {
+  font-size: 12px;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #9f7ab0;
+  text-align: center;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #9f7ab0;
+}
+#about {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #faf6fd;
+  display: flex;
+  justify-content: center;
+}
+#about p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2c2533;
+  text-align: left;
+}
+#about img {
+  width: 100%;
+  max-width: 400px;
+  height: 270px;
+  border-radius: 10px;
+}
+.Über-Uns {
+  max-width: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.Über-Uns-article {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+}
+#services {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#services p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2c2533;
+  text-align: left;
+}
+#services img {
+  width: 100%;
+  height: 270px;
+  max-width: 400px;
+  border-radius: 10px;
+}
+.Leistungen {
+  max-width: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 0;
+}
+.service-article {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+}
+.service-article.reverse {
+  flex-direction: row-reverse;
+}
+#anfahrt {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+.karte {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+}
+#kontakt {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #faf6fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+#kontakt p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2c2533;
+  text-align: left;
+}
+.kontakt-container {
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.kontakt-article {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 70%;
+}
+#kontakt-article-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form input[type="submit"] {
+  background-color: #9f7ab0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+form input[type="submit"]:hover {
+  background-color: #a67acc;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #4a4058;
+  padding: 20px;
+  text-align: center;
+  color: #9f7ab0;
+  font-size: 14px;
+}
+footer a {
+  color: #9f7ab0;
+  text-decoration: none;
+  margin: 0 10px;
+}
+footer a:hover {
+  color: #a67acc;
+}
+.fa-brands.fa-facebook-f {
+  font-size: 24px;
+  background-color: #ffffff;
+  color: #4a4058;
+  padding: 10px;
+  border-radius: 50%;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.fa-brands.fa-facebook-f:hover {
+  background-color: #9f7ab0;
+  color: #ffffff;
+}
+.menu-burger {
+  display: none !important;
+  font-size: 24px;
+  color: #2c2533;
+  padding-top: 48px;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  #logo {
+    height: 90px;
+  }
+  header nav ul {
+    padding-top: 34px;
+    gap: 14px;
+  }
+  .hero {
+    height: 450px;
+  }
+  .hero-Overlay h1 {
+    font-size: 28px;
+  }
+  .Über-Uns {
+    max-width: 90%;
+  }
+  .Über-Uns-article {
+    gap: 40px;
+  }
+  .Leistungen {
+    max-width: 90%;
+  }
+  .service-article {
+    gap: 40px;
+  }
+  .kontakt-article {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  #logo {
+    height: 70px;
+  }
+  .menu-burger {
+    display: block !important;
+    padding-top: 24px;
+  }
+  .menu-desktop {
+    display: none;
+  }
+  .hero {
+    height: 300px;
+  }
+  .hero-Overlay h1 {
+    font-size: 22px;
+  }
+  .hero-Overlay p {
+    font-size: 11px;
+  }
+  .Über-Uns {
+    max-width: 100%;
+  }
+  .Über-Uns-article {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #about img {
+    max-width: 100%;
+    height: auto;
+  }
+  .Leistungen {
+    max-width: 100%;
+  }
+  .service-article {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .reverse {
+    flex-direction: column;
+  }
+  #services img {
+    max-width: 100%;
+    height: auto;
+  }
+  .karte {
+    height: 250px;
+  }
+  .kontakt-article {
+    flex-direction: column;
+    width: 100%;
+  }
+  #kontakt-article-form {
+    max-width: 100%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  #about p,
+  #services p,
+  #kontakt p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
