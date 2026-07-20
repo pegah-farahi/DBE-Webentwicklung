@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #000;
+    line-height: 1.6;
+}
+
+header {
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #1ab2b1;
+}
+
+.hero {
+    margin: 65px auto 0 auto;
+    position: relative;
+    width: 80%;
+    height: 420px;
+    overflow: visible;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.such-bereich {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.tabs img {
+    width: 20px;
+    height: 20px;
+}
+
+.tabs button {
+    display: flex;
+    padding: 5px 70px;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+.tab.active {
+    background-color: #ffffff;
+    color: #1ab2b1;
+}
+
+.tab-inhalt {
+    position:absolute;
+    top: auto;
+    left: auto;
+    background-color: #ffffff;
+    padding: 20px 40px 28px 40px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+    width: 80.5%;
+        }
+
+.tab-inhalt.active {
+     display: block;
+        }
+
+.tab-inhalt.active img {
+    width: 20px;
+    height: 20px;
+        }
+
+
+.tab-inhalt .eingabe-gruppe {
+    flex: 1;
+    min-width: 200px;
+        }
+
+        /* Optionen-Zeile */
+        .optionen {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .optionen select {
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            cursor: pointer;
+            background: none;
+            padding: 4px 0;
+        }
+
+        .optionen-trenner {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #555555;
+            cursor: pointer;
+        }
+
+        /* Eingabe-Zeile */
+        .eingabe-zeile {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+
+        .eingabe-gruppe {
+            flex: 1;
+            position: relative;
+            border: 1px solid #dddddd;
+            padding: 5px 20px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .eingabe-gruppe label {
+            font-size: 11px;
+            color: #999999;
+            margin-bottom: 4px;
+        }
+
+        .eingabe-gruppe input {
+            border: none;
+            outline: none;
+            font-size: 15px;
+            font-weight: 500;
+            color: #1a1a1a;
+            width: 100%;
+            background: transparent;
+        }
+        
+        .eingabe-gruppe .icon-rechts {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .tausch-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0 4px;
+            color: #555555;
+        }
+
+        .suchen-btn {
+            background-color: #1ab2b1;
+            color: #ffffff;
+            border: none;
+            padding: 10px 70px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+        /* ===== KARTEN-BEREICH ===== */
+        .karten-bereich {
+            max-width: 1080px;
+            margin: 100px auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .karte {
+            display: flex;
+            flex-direction: column;
+            border: #898686a3 1px solid;
+            gap: 14px;
+        }
+
+        .karte img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .karte-kategorie {
+            font-size: 13px;
+            color: #777777;
+            font-weight: 500;
+            padding-left: 10px;
+        }
+
+        .karte h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.3;
+            padding-left: 10px;
+        }
+
+
+        /* ===== MEDIA QUERIES ===== */
+
+        @media (max-width: 900px) {
+            header { padding: 14px 30px; }
+            .hero { height: 400px; }
+            .such-bereich { bottom: -100px; }
+            .tab { padding: 12px 18px; font-size: 13px; }
+            .karte {display: none;}
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 12px 20px; justify-content: flex-start; }
+            nav ul { display: none !important; }
+
+            .hero { 
+                height: 600px;
+            }
+
+            .such-bereich {
+                bottom: -20px;
+                padding: 0 12px;
+            }
+            .karte {display: none;}
+
+            .tabs button{ 
+                font-size: 0px;
+                padding: 0px 25px;
+                gap: 10px;
+            }
+
+            .tab-inhalt { padding: 16px; }
+
+            .optionen {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+
+            .eingabe-zeile {
+                flex-direction: column;
+                gap: 0;
+                position: relative;
+            }
+
+            .tausch-btn {
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #ffffff;
+                border: 1px solid #dddddd;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                z-index: 5;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            }
+
+            .datum-gruppe { margin-top: 10px; }
+
+            .suchen-btn {
+                width: 100%;
+                padding: 16px;
+                margin-top: 14px;
+            }
+
+            .karten-bereich {
+                display: none;
+            }
+        }

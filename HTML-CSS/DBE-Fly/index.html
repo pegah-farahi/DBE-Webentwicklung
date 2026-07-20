@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DBE Fly</title>
+        <link rel="stylesheet" href="Styles/main.css">
+    </head>
+    <body>
+        <header>
+            <img src="Images/logo-green.svg" alt="DBE Fly Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Buchen & Vorbereiten</a></li>
+                    <li><a href="#">Meine Buchungen</a></li>
+                    <li><a href="#">DBE Fly entdecken</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Bereich -->
+        <div class="hero">
+            <img src="Images/DBE-Fly-Hero.jpg" alt="DBE Fly Hero">
+
+            <div class="such-bereich">
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="zeigeTab(0)">
+                    <img src="Icons/airplane-tilt (1).svg" alt="Flug Icon">
+                    Flüge
+                </button>
+                <button class="tab" onclick="zeigeTab(1)">
+                    <img src="Icons/bed (2).svg" alt="Hotel Icon">
+                    <img src="Icons/airplane-tilt (2).svg" alt="Flug Icon">
+                    Flug &amp; Hotel
+                </button>
+                <button class="tab" onclick="zeigeTab(2)">
+                    <img src="Icons/car (1).svg" alt="Mietwagen Icon">
+                    Mietwagen
+                </button>
+                <button class="tab" onclick="zeigeTab(3)">
+                    <img src="Icons/bed (2).svg" alt="Hotel Icon">
+                    Hotel
+                </button>
+            </div>
+
+            <!-- Tab 1: Flüge -->
+            <div class="tab-inhalt active">
+                <div class="optionen">
+                    <select>
+                        <option>Hin- und Rückflug</option>
+                        <option>Nur Hinflug</option>
+                    </select>
+                    <div class="optionen-trenner">
+                        <img src="Icons/sliders-horizontal.svg" alt="Dropdown Icon">
+                        Economy, 1 Reisende(r)
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Nur Nonstop Flüge
+                    </label>
+                </div>
+                <div class="eingabe-zeile">
+                    <div class="eingabe-gruppe">
+                        <label>Von</label>
+                        <input type="text" value="Frankfurt">
+                        <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
+                    </div>
+                    <button class="tausch-btn">
+                        <img src="Icons/arrows-left-right.svg" alt="Tauschen Icon">
+                    </button>
+                    <div class="eingabe-gruppe">
+                        <label>Nach</label>
+                        <input type="text" placeholder="Nach">
+                        <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
+                    </div>
+                    <div class="eingabe-gruppe datum-gruppe">
+                        <label>Datum</label>
+                        <input type="text" placeholder="Abflug - Rückflug">
+                        <span class="icon-rechts"><img src="Icons/calendar-dots (1).svg" alt="Kalender Icon"></span>
+                    </div>
+                    <button class="suchen-btn">Suchen</button>
+                </div>
+            </div>
+        </div> <!-- Ende such-bereich -->
+    </div> <!-- Ende hero -->
+
+            <!-- KARTEN-BEREICH -->
+    <div class="karten-bereich">
+        <div class="karte">
+            <img src="Images/Flugplan2024.webp" alt="Flugplan 2024">
+            <span class="karte-kategorie">Flugplan 2024</span>
+            <h3>Entdecken Sie unsere neuen Destinationen</h3>
+        </div>
+        <div class="karte">
+            <img src="Images/DBE-Travel-Briefing.jpg" alt="Travel Briefing">
+            <span class="karte-kategorie">DBE Travel Briefing</span>
+            <h3>Profitieren Sie vom Reiseleitfaden mit nützlichen Tipps.</h3>
+        </div>
+    </div>
+
+    </body>
+</html>
