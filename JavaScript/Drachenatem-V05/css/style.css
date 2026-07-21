@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaec;
+    color: #333;
+}
+
+header {
+    color: #ea4b2f;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+}
+
+hr {
+    border: none;
+    border-top: 5px solid #aadcb0;
+    width: 75%;
+    background-color: #aadcb0;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    width: 75%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#zutaten {
+    border: #ff6b35 1px solid;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 40px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #ff6b35;
+}
+
+#kurze-erklaerung {
+    width: 95%;
+    margin: 20px auto;
+    padding: 1rem;
+    text-align: justify;
+    border: #f9f2de  1px solid;
+    background-color: #f9f2de ;
+    border-radius: 10px;
+    color: #000;
+    line-height: 1.5;
+}
+
+#rezept {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 1rem;
+    text-align: justify;
+    border: #fff  1px solid;
+    background-color: #fff ;
+    color: #000;
+    line-height: 1.5;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#portionen {
+    text-align: center;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 20%;
+}
+
+label[for="portionen-input"] {
+    display: block;
+    margin: 10px auto;
+    font-weight: bold;
+    text-align: center;
+    background-color: #d7f8db;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type="number"] {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    border: #ea4b2f 1px solid;
+    border-radius: 5px;
+}
+
+.rezept-inhalt {
+    margin-top: 20px;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#zutatenliste {
+    margin-top: 20px;
+    padding: 1rem;
+    border: #f9f2de  1px solid;
+    background-color: #f9f2de;
+    color: #000;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    width: 20%;
+}
+
+
+table {
+    width: 15%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+table caption {
+    caption-side: top;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: #aadcb0 3px solid;
+    color: #525252;
+    text-align: left;
+}
+
+table, th, td {
+    border-bottom: 1px solid #ced4da;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.anleitung {
+    margin-top: 0px;
+    padding: 1rem;
+    background-color: #ffffff ;
+    color: #000;
+    line-height: 1.5;
+}
+
+.anleitung h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #666565;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.anleitung hr {
+    border: none;
+    border-top: 3px solid #aadcb0;
+    width: 100%;
+}
+
+.schritt-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.schritt {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.schritt-nummer {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    min-width: 20px;
+    padding-top: 1px;
+        }
+
+.schritt-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    border-left: 2px solid #aadcb0;
+    padding-left: 14px;
+}
+
