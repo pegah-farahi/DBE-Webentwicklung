@@ -15,9 +15,9 @@ var now = new Date();
 var hour = now.getHours();         
 console.log(now,hour); 
 
-if (hour < 12) {
+if (hour >= 0 && hour < 12) {
     greetingDiv.innerHTML = "<b>Guten</b> Morgen!";
-} else if (hour < 18) {
+} else if (hour >= 12 && hour < 18) {
     greetingDiv.innerHTML = "<b>Guten</b> Tag!";
 } else {
     greetingDiv.innerHTML = "<b>Guten</b> Abend!";
