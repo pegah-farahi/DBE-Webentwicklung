@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grußnachricht</title>
+</head>
+<body>
+    <div id="greeting"></div>
+
+<script> 
+var greetingDiv = document.getElementById("greeting"); 
+// Abrufen der aktuellen Uhrzeit 
+var now = new Date(); 
+var hour = now.getHours();         
+console.log(now,hour); 
+
+if (hour < 12) {
+    greetingDiv.innerHTML = "<b>Guten</b> Morgen!";
+} else if (hour < 18) {
+    greetingDiv.innerHTML = "<b>Guten</b> Tag!";
+} else {
+    greetingDiv.innerHTML = "<b>Guten</b> Abend!";
+}
+</script>
+</body>
+</html>
