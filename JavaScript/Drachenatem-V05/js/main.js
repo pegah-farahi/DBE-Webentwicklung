@@ -5,3 +5,15 @@ let einheiten = ["Stk.", "g", "ml", "ml", "Stk.", "g", "ml", "g"];
 for (let i = 0; i < zutaten.length; i++) {
     console.log("Zutat: " + zutaten[i] + " – " + mengen[i] + " " + einheiten[i]);
 }
+
+let infoBtn = document.querySelector(".info-btn");
+let schliessenBtn = document.getElementById("close-btn");
+let overlay = document.getElementById("overlay");
+
+infoBtn.addEventListener("click", function() {
+        overlay.classList.toggle("sichtbar");
+});
+
+schliessenBtn.addEventListener("click", function() {
+        overlay.classList.toggle("sichtbar");
+});
