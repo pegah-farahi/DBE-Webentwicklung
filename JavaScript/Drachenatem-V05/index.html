@@ -17,7 +17,7 @@
                 <div class="popup">
                     <div class="popup-header">
                         <h2>Allergene (und andere übernatürliche Gefahren):</h2>
-                        <button class="close-btn" id="close-btn">✕</button>
+                        <button class="schliessen-btn" id="schliessen-btn">✕</button>
                     </div>
                     <hr>
                     <ul>
@@ -32,7 +32,7 @@
             </div>
 
             <div id="zutaten">
-                <h3>Drachenatem-Curry <button class="info-btn">ⓘ</button></h3>
+                <h3>Drachenatem-Curry <button class="info-btn" id="info-btn">ⓘ</button></h3>
            
                 <section id="kurze-erklaerung">
                 <p>Dieses Curry ist nicht nur für mutige Esser gemacht, sondern bringt dein Abendessen auf Hochtouren! Mit seiner
@@ -46,25 +46,29 @@
             
             <div id="rezept">
                 
-                <div id="portionen">
+                <div class="portionen">
                 <label for="portionen-input">Portionen:</label>
                 <input type="number" id="portionen-input" value="1" min="1">
                 </div>
 
-            <div class="rezept-inhalt">
-                <section id="zutatenliste">
-                    <table>
-                    <caption>Was du brauchst:</caption>
-                        <tr><td>Huhn</td><td>1 Stk.</td></tr>
-                        <tr><td>Currypulver</td><td>10g</td></tr>
-                        <tr><td>Kokosmilch</td><td>250ml</td></tr>
-                        <tr><td>Ingwer</td><td>2ml</td></tr>
-                        <tr><td>Zwiebel</td><td>1Stk.</td></tr>
-                        <tr><td>Reis</td><td>200g</td></tr>
-                        <tr><td>Zitronensaft</td><td>20ml</td></tr>
-                        <tr><td>Chili</td><td>0.5g</td></tr>
-                    </table>
-                </section>
+     <div class="haupt-bereich">
+
+        <div class="zutaten-box">
+            <h3>Was du brauchst:</h3>
+            <hr>
+            <div class="zutaten-liste" id="zutaten-liste">
+                <div class="zutat-zeile"><span>Huhn</span><span>1 Stk.</span></div>
+                <hr color="black" size="1">
+                <div class="zutat-zeile"><span>Currypulver</span><span>10 g</span></div>
+                <div class="zutat-zeile"><span>Kokosmilch</span><span>250 ml</span></div>
+                <div class="zutat-zeile"><span>Ingwer</span><span>2 ml</span></div>
+                <div class="zutat-zeile"><span>Zwiebel</span><span>1 Stk.</span></div>
+                <div class="zutat-zeile"><span>Reis</span><span>200 g</span></div>
+                <div class="zutat-zeile"><span>Zitronensaft</span><span>20 ml</span></div>
+                <div class="zutat-zeile"><span>Chili</span><span>0.5 g</span></div>
+            </div>
+        </div>
+
 <div class="anleitung">
             <h3>So wird's gemacht</h3>
             <hr>
@@ -86,6 +90,7 @@
                     <p class="schritt-text">Das Currypulver einstreuen und gut unter das Huhn mischen. Etwa 1 Minute anrösten lassen, damit sich die Aromen entfalten.</p>
                 </div>
             </div>
+        </div> <!-- Ende von .haupt-bereich -->
             </div>
         </main>
         <script src="js/main.js"></script>

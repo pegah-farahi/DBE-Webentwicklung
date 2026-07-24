@@ -165,7 +165,7 @@ h3 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-#portionen {
+.portionen {
   text-align: center;
   margin: 24px auto;
   display: flex;
@@ -196,56 +196,60 @@ input[type="number"] {
   border-radius: 5px;
 }
 
-.rezept-inhalt {
-  margin-top: 20px;
-  padding: 1rem;
-  border: none;
-  background-color: #fff;
-  color: #000;
-  line-height: 1.5;
+.haupt-bereich {
   display: flex;
-  flex-direction: row;
-  gap: 50px;
+  gap: 24px;
+  align-items: flex-start;
 }
 
-#zutatenliste {
+.zutaten-box {
   margin-top: 20px;
   padding: 1rem;
   border: #f9f2de 1px solid;
+  border-radius: 10px;
   background-color: #f9f2de;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   color: #000;
   line-height: 1.5;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  min-width: 180px;
   width: 20%;
+  flex-shrink: 0;
 }
 
-table {
-  width: 15%;
-  border-collapse: collapse;
+.zutaten-box h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #666565;
+  text-align: left;
+}
+
+.zutaten-box hr {
+  border: none;
+  border-top: 3px solid #aadcb0;
+  width: 100%;
+}
+
+.zutaten-liste {
   margin-top: 20px;
-  font-weight: bold;
+  padding: 1rem;
+  color: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-table caption {
-  caption-side: top;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  border-bottom: #aadcb0 3px solid;
-  color: #525252;
-  text-align: left;
+.zutat-zeile {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 8px;
 }
 
-table,
-th,
-td {
-  border-bottom: 1px solid #ced4da;
-}
-
-th,
-td {
-  padding: 10px;
-  text-align: left;
+.zutat-zeile span:last-child {
+    font-weight: 700;
 }
 
 .anleitung {
