@@ -11,15 +11,15 @@ let zutaten = [
 let mengen = [1, 10, 250, 2, 1, 200, 20, 0.5];
 let einheiten = ["Stk.", "g", "ml", "ml", "Stk.", "g", "ml", "g"];
 
-// ===== FUNKTION: Zutatenliste aktualisieren =====
+
 function zutatenAktualisieren(portionen) {
   let liste = document.getElementById("zutaten-liste");
-  liste.innerHTML = ""; // alte Liste leeren
+  liste.innerHTML = ""; 
 
   for (let i = 0; i < zutaten.length; i++) {
     let berechneteMenge = mengen[i] * portionen;
 
-    // neue Zeile erstellen
+  
     let zeile = document.createElement("div");
     zeile.classList.add("zutat-zeile");
     zeile.innerHTML =
@@ -35,10 +35,9 @@ function zutatenAktualisieren(portionen) {
   }
 }
 
-// ===== BEIM LADEN: Standardmäßig 1 Portion anzeigen =====
 zutatenAktualisieren(1);
 
-// ===== EVENT LISTENER: Eingabefeld =====
+
 let portionenInput = document.getElementById("portionen-input");
 
 portionenInput.addEventListener("change", function () {
