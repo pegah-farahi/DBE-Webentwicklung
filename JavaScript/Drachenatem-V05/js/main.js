@@ -1,34 +1,34 @@
-let zutaten = [
-  "Huhn",
-  "Currypulver",
-  "Kokosmilch",
-  "Ingwer",
-  "Zwiebel",
-  "Reis",
-  "Zitronensaft",
-  "Chili",
-];
-let mengen = [1, 10, 250, 2, 1, 200, 20, 0.5];
-let einheiten = ["Stk.", "g", "ml", "ml", "Stk.", "g", "ml", "g"];
-
+const rezeptDaten = {
+  zutaten: [
+    { name: "Huhn", menge: 1, einheit: "Stk." },
+    { name: "Currypulver", menge: 10, einheit: "g" },
+    { name: "Kokosmilch", menge: 250, einheit: "ml" },
+    { name: "Ingwer", menge: 2, einheit: "ml" },
+    { name: "Zwiebel", menge: 1, einheit: "Stk." },
+    { name: "Reis", menge: 200, einheit: "g" },
+    { name: "Zitronensaft", menge: 20, einheit: "ml" },
+    { name: "Chili", menge: 0.5, einheit: "g" },
+  ],
+};
 
 function zutatenAktualisieren(portionen) {
   let liste = document.getElementById("zutaten-liste");
-  liste.innerHTML = ""; 
+  liste.innerHTML = ""; // alte Liste leeren
 
-  for (let i = 0; i < zutaten.length; i++) {
-    let berechneteMenge = mengen[i] * portionen;
+  for (let i = 0; i < rezeptDaten.zutaten.length; i++) {
+    let zutat = rezeptDaten.zutaten[i];
+    let berechneteMenge = zutat.menge * portionen;
 
-  
+    // neue Zeile erstellen
     let zeile = document.createElement("div");
     zeile.classList.add("zutat-zeile");
     zeile.innerHTML =
       "<span>" +
-      zutaten[i] +
+      zutat.name +
       "</span><span>" +
       berechneteMenge +
       " " +
-      einheiten[i] +
+      zutat.einheit +
       "</span>";
 
     liste.appendChild(zeile);
@@ -36,7 +36,6 @@ function zutatenAktualisieren(portionen) {
 }
 
 zutatenAktualisieren(1);
-
 
 let portionenInput = document.getElementById("portionen-input");
 
