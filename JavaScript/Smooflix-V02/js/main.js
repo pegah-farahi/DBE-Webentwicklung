@@ -10,6 +10,21 @@ const image = document.querySelector("#smoothie-image");
 const flavour = document.querySelector("#smoothie-flavour");
 const ingredients = document.querySelector("#ingredients");
 
+window.addEventListener("DOMContentLoaded", function () {
+  var gespeicherterName = localStorage.getItem("letzterSmoothieName");
+  var gespeicherterSmoothie = localStorage.getItem("letzterSmoothie");
+
+  if (gespeicherterName) {
+    input.value = gespeicherterName;
+  }
+
+  if (gespeicherterSmoothie) {
+    var smoothieObjekt = JSON.parse(gespeicherterSmoothie);
+
+    renderSmoothie(smoothieObjekt, gespeicherterName);
+  }
+});
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const smoothieName = input.value.trim();
@@ -31,17 +46,35 @@ form.addEventListener("submit", async (event) => {
   } catch (error) {
     console.error("Smoothie konnte nicht geladen werden:", error);
     status.classList.add("error");
-    status.textContent = "Der Smoothie konnte gerade nicht geladen werden. Bitte versuche es erneut.";
+    status.textContent =
+      "Der Smoothie konnte gerade nicht geladen werden. Bitte versuche es erneut.";
   } finally {
     setLoading(false);
   }
 });
 
 function renderSmoothie(data, requestedName) {
-  const smoothie = Array.isArray(data) ? data[0] : (data.smoothie ?? data.data ?? data);
-  const smoothieTitle = smoothie.name ?? smoothie.smoothieName ?? smoothie.smoothiename ?? requestedName;
-  const smoothieImage = smoothie.image ?? smoothie.imageUrl ?? smoothie.imageURL ?? smoothie.bild ?? smoothie.picture;
-  const smoothieFlavour = smoothie.flavour ?? smoothie.flavor ?? smoothie.taste ?? smoothie.geschmack ?? smoothie.geschmacksrichtung ?? "Lecker & erfrischend";
+  const smoothie = Array.isArray(data)
+    ? data[0]
+    : (data.smoothie ?? data.data ?? data);
+  const smoothieTitle =
+    smoothie.name ??
+    smoothie.smoothieName ??
+    smoothie.smoothiename ??
+    requestedName;
+  const smoothieImage =
+    smoothie.image ??
+    smoothie.imageUrl ??
+    smoothie.imageURL ??
+    smoothie.bild ??
+    smoothie.picture;
+  const smoothieFlavour =
+    smoothie.flavour ??
+    smoothie.flavor ??
+    smoothie.taste ??
+    smoothie.geschmack ??
+    smoothie.geschmacksrichtung ??
+    "Lecker & erfrischend";
   const smoothieIngredients = smoothie.ingredients ?? smoothie.zutaten ?? [];
 
   title.textContent = smoothieTitle;
@@ -49,13 +82,26 @@ function renderSmoothie(data, requestedName) {
   image.alt = smoothieImage ? `Abbildung von ${smoothieTitle}` : "";
   image.hidden = !smoothieImage;
   flavour.textContent = smoothieFlavour;
-  ingredients.replaceChildren(...(Array.isArray(smoothieIngredients) ? smoothieIngredients : [smoothieIngredients]).map((ingredient) => {
-    const item = document.createElement("li");
-    item.textContent = typeof ingredient === "object" ? (ingredient.name ?? ingredient.ingredient ?? JSON.stringify(ingredient)) : ingredient;
-    return item;
-  }));
+  ingredients.replaceChildren(
+    ...(Array.isArray(smoothieIngredients)
+      ? smoothieIngredients
+      : [smoothieIngredients]
+    ).map((ingredient) => {
+      const item = document.createElement("li");
+      item.textContent =
+        typeof ingredient === "object"
+          ? (ingredient.name ??
+            ingredient.ingredient ??
+            JSON.stringify(ingredient))
+          : ingredient;
+      return item;
+    }),
+  );
   card.hidden = false;
 }
+
+localStorage.setItem("letzterSmoothieName", smoothieName);
+localStorage.setItem("letzterSmoothie", JSON.stringify(smoothie));
 
 function setLoading(isLoading) {
   button.disabled = isLoading;
