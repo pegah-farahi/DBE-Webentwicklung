@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smooflix</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <main>
+            <section id="head">
+            <h1>Smooflix</h1>
+            <p>Entdecke deinen perfekten Smoothie</p>
+            </section>
+
+      <section class="content">
+        <form id="smoothie-form" class="search-form">
+          <label class="visually-hidden" for="smoothie-name">Smoothie Name</label>
+          <input id="smoothie-name" name="smoothie-name" type="text" placeholder="Smoothie Name" autocomplete="off" required />
+          <button type="submit">Smoothie generieren</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite"></p>
+
+        <article id="smoothie-card" class="smoothie-card" aria-live="polite" hidden>
+          <h2 id="smoothie-title"></h2>
+          <img id="smoothie-image" class="smoothie-image" alt="" />
+          <p id="smoothie-flavour" class="flavour"></p>
+          <section>
+            <h3>Zutaten</h3>
+            <ul id="ingredients" class="ingredients"></ul>
+          </section>
+        </article>
+      </section>
+        </main>
+        <script src="js/main.js"></script>
+    </body>
+</html>
