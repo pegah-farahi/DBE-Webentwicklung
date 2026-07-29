@@ -265,6 +265,50 @@ header nav ul li a:hover {
         }
 
 
+        /* ===== FLUGERGEBNISSE ===== */
+        .flug-ergebnisse {
+            max-width: 1080px;
+            margin: 120px auto 50px;
+            padding: 0 20px;
+        }
+
+        .flug-ergebnisse h2 { color: #123362; }
+        #ergebnis-info { color: #666; margin: 4px 0 16px; }
+        .flug-liste { display: grid; gap: 18px; }
+
+        .flug-karte {
+            display: grid;
+            grid-template-columns: 1fr 155px 155px;
+            background: #fff;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+            min-height: 140px;
+        }
+
+        .flug-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px 34px;
+            color: #123362;
+        }
+
+        .flug-details > div { display: flex; flex-direction: column; }
+        .flug-details strong { font-size: 18px; }
+        .flug-details span, .flug-details small { font-size: 13px; }
+        .flug-strecke { text-align: center; flex: 1; }
+        .preis {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px solid currentColor;
+            font-size: 17px;
+        }
+        .preis strong { font-size: 20px; }
+        .economy { color: #477247; }
+        .business { color: #3e6071; }
+
         /* ===== MEDIA QUERIES ===== */
 
         @media (max-width: 900px) {
@@ -335,4 +379,8 @@ header nav ul li a:hover {
             .karten-bereich {
                 display: none;
             }
+            .flug-ergebnisse { margin-top: 60px; padding: 0 12px; }
+            .flug-karte { grid-template-columns: 1fr 1fr; }
+            .flug-details { grid-column: 1 / -1; padding: 18px; }
+            .preis { min-height: 100px; }
         }

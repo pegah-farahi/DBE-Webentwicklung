@@ -57,13 +57,13 @@
                         Economy, 1 Reisende(r)
                     </div>
                     <label class="checkbox-label">
-                        <input type="checkbox"> Nur Nonstop Flüge
+                        <input id="nonstop-input" type="checkbox"> Nur Nonstop Flüge
                     </label>
                 </div>
                 <div class="eingabe-zeile">
                     <div class="eingabe-gruppe">
                         <label>Von</label>
-                        <input type="text" value="Frankfurt">
+                        <input id="start-input" type="text" value="Stuttgart">
                         <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
                     </div>
                     <button class="tausch-btn">
@@ -71,7 +71,7 @@
                     </button>
                     <div class="eingabe-gruppe">
                         <label>Nach</label>
-                        <input type="text" placeholder="Nach">
+                        <input id="ziel-input" type="text" placeholder="Nach">
                         <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
                     </div>
                     <div class="eingabe-gruppe datum-gruppe">
@@ -79,11 +79,17 @@
                         <input type="text" placeholder="Abflug - Rückflug">
                         <span class="icon-rechts"><img src="Icons/calendar-dots (1).svg" alt="Kalender Icon"></span>
                     </div>
-                    <button class="suchen-btn">Suchen</button>
+                    <button class="suchen-btn" type="button" id="suchen-btn">Suchen</button>
                 </div>
             </div>
         </div> <!-- Ende such-bereich -->
     </div> <!-- Ende hero -->
+
+    <section class="flug-ergebnisse" aria-live="polite">
+        <h2>Verfügbare Flüge</h2>
+        <p id="ergebnis-info"></p>
+        <div id="flug-liste" class="flug-liste"></div>
+    </section>
 
             <!-- KARTEN-BEREICH -->
     <div class="karten-bereich">
@@ -99,5 +105,48 @@
         </div>
     </div>
 
+    <script>
+        
+        const fluege = [
+            { start: "Stuttgart (STR)", ziel: "Frankfurt (FRA)", stops: 0, flugdauer: "1h 10m", preis: { business: "350 EUR", economy: "150 EUR" }, terminal: "T1" },
+            { start: "Stuttgart (STR)", ziel: "Berlin (BER)", stops: 0, flugdauer: "1h 25m", preis: { business: "400 EUR", economy: "180 EUR" }, terminal: "T2" },
+            { start: "Stuttgart (STR)", ziel: "München (MUC)", stops: 0, flugdauer: "1h 05m", preis: { business: "370 EUR", economy: "160 EUR" }, terminal: "T1" },
+            { start: "Stuttgart (STR)", ziel: "Hamburg (HAM)", stops: 1, flugdauer: "2h 45m", preis: { business: "450 EUR", economy: "200 EUR" }, terminal: "T3" },
+            { start: "Stuttgart (STR)", ziel: "Düsseldorf (DUS)", stops: 0, flugdauer: "1h 20m", preis: { business: "380 EUR", economy: "170 EUR" }, terminal: "T1" },
+            { start: "Stuttgart (STR)", ziel: "Zürich (ZRH)", stops: 0, flugdauer: "1h 10m", preis: { business: "390 EUR", economy: "180 EUR" }, terminal: "T2" },
+            { start: "Stuttgart (STR)", ziel: "Wien (VIE)", stops: 1, flugdauer: "2h 15m", preis: { business: "420 EUR", economy: "190 EUR" }, terminal: "T1" },
+            { start: "Stuttgart (STR)", ziel: "Paris (CDG)", stops: 0, flugdauer: "1h 30m", preis: { business: "430 EUR", economy: "200 EUR" }, terminal: "T3" },
+            { start: "Stuttgart (STR)", ziel: "Amsterdam (AMS)", stops: 0, flugdauer: "1h 35m", preis: { business: "440 EUR", economy: "210 EUR" }, terminal: "T2" },
+            { start: "Stuttgart (STR)", ziel: "Madrid (MAD)", stops: 1, flugdauer: "3h 15m", preis: { business: "500 EUR", economy: "250 EUR" }, terminal: "T1" }
+        ];
+
+        function zeigeFluege() {
+            const start = document.getElementById("start-input").value.trim().toLowerCase();
+            const ziel = document.getElementById("ziel-input").value.trim().toLowerCase();
+            const nurNonstop = document.getElementById("nonstop-input").checked;
+            const passendeFluege = fluege.filter(flug =>
+                flug.start.toLowerCase().includes(start) &&
+                flug.ziel.toLowerCase().includes(ziel) &&
+                (!nurNonstop || flug.stops === 0)
+            );
+
+            document.getElementById("ergebnis-info").textContent = passendeFluege.length
+                ? `${passendeFluege.length} Flug/Flüge gefunden`
+                : "Keine passenden Flüge gefunden.";
+            document.getElementById("flug-liste").innerHTML = passendeFluege.map(flug => `
+                <article class="flug-karte">
+                    <div class="flug-details">
+                        <div><strong>${flug.start}</strong><span>Abflug</span></div>
+                        <div class="flug-strecke"><span>${flug.stops === 0 ? "Nonstop" : `${flug.stops} Stopp`}</span><small>Dauer ${flug.flugdauer}</small></div>
+                        <div><strong>${flug.ziel}</strong><span>Terminal ${flug.terminal}</span></div>
+                    </div>
+                    <div class="preis economy"><span>Economy</span><strong>${flug.preis.economy}</strong></div>
+                    <div class="preis business"><span>Business</span><strong>${flug.preis.business}</strong></div>
+                </article>`).join("");
+        }
+
+        document.getElementById("suchen-btn").addEventListener("click", zeigeFluege);
+        zeigeFluege();
+    </script>
     </body>
 </html>
