@@ -26,20 +26,20 @@
 
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab active" onclick="zeigeTab(0)">
+                <button class="tab active" type="button">
                     <img src="Icons/airplane-tilt (1).svg" alt="Flug Icon">
                     Flüge
                 </button>
-                <button class="tab" onclick="zeigeTab(1)">
+                <button class="tab" type="button">
                     <img src="Icons/bed (2).svg" alt="Hotel Icon">
                     <img src="Icons/airplane-tilt (2).svg" alt="Flug Icon">
                     Flug &amp; Hotel
                 </button>
-                <button class="tab" onclick="zeigeTab(2)">
+                <button class="tab" type="button">
                     <img src="Icons/car (1).svg" alt="Mietwagen Icon">
                     Mietwagen
                 </button>
-                <button class="tab" onclick="zeigeTab(3)">
+                <button class="tab" type="button">
                     <img src="Icons/bed (2).svg" alt="Hotel Icon">
                     Hotel
                 </button>
@@ -57,13 +57,13 @@
                         Economy, 1 Reisende(r)
                     </div>
                     <label class="checkbox-label">
-                        <input type="checkbox"> Nur Nonstop Flüge
+                        <input id="nonstop-input" type="checkbox"> Nur Nonstop Flüge
                     </label>
                 </div>
                 <div class="eingabe-zeile">
                     <div class="eingabe-gruppe">
                         <label>Von</label>
-                        <input type="text" value="Frankfurt">
+                        <input id="start-input" type="text" value="Stuttgart">
                         <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
                     </div>
                     <button class="tausch-btn">
@@ -71,7 +71,7 @@
                     </button>
                     <div class="eingabe-gruppe">
                         <label>Nach</label>
-                        <input type="text" placeholder="Nach">
+                        <input id="ziel-input" type="text" placeholder="Nach">
                         <span class="icon-rechts"><img src="Icons/chat-dots (1).svg"></span>
                     </div>
                     <div class="eingabe-gruppe datum-gruppe">
@@ -79,11 +79,35 @@
                         <input type="text" placeholder="Abflug - Rückflug">
                         <span class="icon-rechts"><img src="Icons/calendar-dots (1).svg" alt="Kalender Icon"></span>
                     </div>
-                    <button class="suchen-btn">Suchen</button>
+                    <button class="suchen-btn" type="button">Suchen</button>
                 </div>
             </div>
         </div> <!-- Ende such-bereich -->
     </div> <!-- Ende hero -->
+
+    <section class="flug-ergebnisse" aria-live="polite">
+        <h2>Verfügbare Flüge</h2>
+        <div class="flug-liste">
+            <article class="flug-karte">
+                <div class="flug-details">
+                    <div><strong>10:10</strong><span>HAJ</span></div>
+                    <div class="flug-strecke"><span>1 Stopp</span><small>◷ Dauer 2h 35min</small></div>
+                    <div><strong>12:45</strong><span>STR</span><small>Terminal 1</small></div>
+                </div>
+                <div class="preis economy"><span>Economy</span><small>ab</small><strong>191,67</strong><small>EUR</small><span>⌄</span></div>
+                <div class="preis business"><span>Business</span><small>ab</small><strong>236,67</strong><small>EUR</small><span>⌄</span></div>
+            </article>
+            <article class="flug-karte">
+                <div class="flug-details">
+                    <div><strong>10:10</strong><span>HAJ</span></div>
+                    <div class="flug-strecke"><span>1 Stopp</span><small>◷ Dauer 2h 35min</small></div>
+                    <div><strong>12:45</strong><span>STR</span><small>Terminal 1</small></div>
+                </div>
+                <div class="preis economy"><span>Economy</span><small>ab</small><strong>191,67</strong><small>EUR</small><span>⌄</span></div>
+                <div class="preis business"><span>Business</span><small>ab</small><strong>236,67</strong><small>EUR</small><span>⌄</span></div>
+            </article>
+        </div>
+    </section>
 
             <!-- KARTEN-BEREICH -->
     <div class="karten-bereich">
