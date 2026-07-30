@@ -9,21 +9,10 @@ const title = document.querySelector("#smoothie-title");
 const image = document.querySelector("#smoothie-image");
 const flavour = document.querySelector("#smoothie-flavour");
 const ingredients = document.querySelector("#ingredients");
+const SAVED_NAME_KEY = "letzterSmoothieName";
+const SAVED_RESULT_KEY = "letzterSmoothieErgebnis";
 
-window.addEventListener("DOMContentLoaded", function () {
-  var gespeicherterName = localStorage.getItem("letzterSmoothieName");
-  var gespeicherterSmoothie = localStorage.getItem("letzterSmoothie");
-
-  if (gespeicherterName) {
-    input.value = gespeicherterName;
-  }
-
-  if (gespeicherterSmoothie) {
-    var smoothieObjekt = JSON.parse(gespeicherterSmoothie);
-
-    renderSmoothie(smoothieObjekt, gespeicherterName);
-  }
-});
+loadLastSmoothie();
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -42,39 +31,27 @@ form.addEventListener("submit", async (event) => {
     const smoothie = await response.json();
     console.log("Smoothie-API Antwort:", smoothie);
     renderSmoothie(smoothie, smoothieName);
+
+
+    localStorage.setItem(SAVED_NAME_KEY, smoothieName);
+    localStorage.setItem(SAVED_RESULT_KEY, JSON.stringify(smoothie));
+
     status.textContent = "";
   } catch (error) {
     console.error("Smoothie konnte nicht geladen werden:", error);
     status.classList.add("error");
-    status.textContent =
-      "Der Smoothie konnte gerade nicht geladen werden. Bitte versuche es erneut.";
+    status.textContent = "Der Smoothie konnte gerade nicht geladen werden. Bitte versuche es erneut.";
   } finally {
     setLoading(false);
   }
 });
 
 function renderSmoothie(data, requestedName) {
-  const smoothie = Array.isArray(data)
-    ? data[0]
-    : (data.smoothie ?? data.data ?? data);
-  const smoothieTitle =
-    smoothie.name ??
-    smoothie.smoothieName ??
-    smoothie.smoothiename ??
-    requestedName;
-  const smoothieImage =
-    smoothie.image ??
-    smoothie.imageUrl ??
-    smoothie.imageURL ??
-    smoothie.bild ??
-    smoothie.picture;
-  const smoothieFlavour =
-    smoothie.flavour ??
-    smoothie.flavor ??
-    smoothie.taste ??
-    smoothie.geschmack ??
-    smoothie.geschmacksrichtung ??
-    "Lecker & erfrischend";
+  
+  const smoothie = Array.isArray(data) ? data[0] : (data.smoothie ?? data.data ?? data);
+  const smoothieTitle = smoothie.name ?? smoothie.smoothieName ?? smoothie.smoothiename ?? requestedName;
+  const smoothieImage = smoothie.image ?? smoothie.imageUrl ?? smoothie.imageURL ?? smoothie.bild ?? smoothie.picture;
+  const smoothieFlavour = smoothie.flavour ?? smoothie.flavor ?? smoothie.taste ?? smoothie.geschmack ?? smoothie.geschmacksrichtung ?? "Lecker & erfrischend";
   const smoothieIngredients = smoothie.ingredients ?? smoothie.zutaten ?? [];
 
   title.textContent = smoothieTitle;
@@ -82,28 +59,36 @@ function renderSmoothie(data, requestedName) {
   image.alt = smoothieImage ? `Abbildung von ${smoothieTitle}` : "";
   image.hidden = !smoothieImage;
   flavour.textContent = smoothieFlavour;
-  ingredients.replaceChildren(
-    ...(Array.isArray(smoothieIngredients)
-      ? smoothieIngredients
-      : [smoothieIngredients]
-    ).map((ingredient) => {
-      const item = document.createElement("li");
-      item.textContent =
-        typeof ingredient === "object"
-          ? (ingredient.name ??
-            ingredient.ingredient ??
-            JSON.stringify(ingredient))
-          : ingredient;
-      return item;
-    }),
-  );
+  ingredients.replaceChildren(...(Array.isArray(smoothieIngredients) ? smoothieIngredients : [smoothieIngredients]).map((ingredient) => {
+    const item = document.createElement("li");
+    item.textContent = typeof ingredient === "object" ? (ingredient.name ?? ingredient.ingredient ?? JSON.stringify(ingredient)) : ingredient;
+    return item;
+  }));
   card.hidden = false;
 }
-
-localStorage.setItem("letzterSmoothieName", smoothieName);
-localStorage.setItem("letzterSmoothie", JSON.stringify(smoothie));
 
 function setLoading(isLoading) {
   button.disabled = isLoading;
   button.textContent = isLoading ? "Wird gemixt …" : "Smoothie generieren";
+}
+
+function loadLastSmoothie() {
+  const savedName = localStorage.getItem(SAVED_NAME_KEY);
+  const savedResult = localStorage.getItem(SAVED_RESULT_KEY);
+
+ 
+  if (savedName) {
+    input.value = savedName;
+  }
+
+
+  if (savedName && savedResult) {
+    try {
+      const smoothie = JSON.parse(savedResult);
+      renderSmoothie(smoothie, savedName);
+    } catch (error) {
+      console.error("Gespeicherter Smoothie ist ungültig:", error);
+      localStorage.removeItem(SAVED_RESULT_KEY);
+    }
+  }
 }
